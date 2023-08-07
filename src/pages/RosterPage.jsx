@@ -36,9 +36,20 @@ useEffect( () => {
     console.log(error)
     }
 }, [])
-      const deleteHandler = (e) => {
+      const deleteHandler = async (e) => {
         console.log('delete')
         console.log(e)
+        try {
+          const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/COHORT-NAME/players/${e}`,
+            {
+              method: 'DELETE',
+            }
+          );
+          const result = await response.json();
+          console.log(result);
+        } catch (err) {
+          console.error(err);
+        }
       }
 
     const handler = (a) => {
@@ -80,7 +91,7 @@ return (
                     <br/>
                     Status: {index.status}
                     <br/>
-                    <button onClick={deleteHandler}>Delete</button>
+                    <button onClick={() => deleteHandler(index.id)}>Delete</button>
                 </Item>
             </a>
           </Grid>
