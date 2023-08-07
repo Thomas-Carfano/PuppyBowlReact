@@ -47,6 +47,7 @@ useEffect( () => {
           );
           const result = await response.json();
           console.log(result);
+          location.reload();
         } catch (err) {
           console.error(err);
         }
