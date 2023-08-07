@@ -36,7 +36,10 @@ useEffect( () => {
     console.log(error)
     }
 }, [])
-
+      const deleteHandler = (e) => {
+        console.log('delete')
+        console.log(e)
+      }
 
     const handler = (a) => {
         const getRoot = document.getElementById('root');
@@ -76,6 +79,8 @@ return (
                     <b>{index.name}</b>
                     <br/>
                     Status: {index.status}
+                    <br/>
+                    <button onClick={deleteHandler}>Delete</button>
                 </Item>
             </a>
           </Grid>
