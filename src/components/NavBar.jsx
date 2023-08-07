@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './App.CSS'
+import '../App.CSS'
 
 
 const NavBar = () => {
@@ -13,7 +13,6 @@ const NavBar = () => {
                 <Link to="./" title="Home" className="test">Home</Link>
                 <Link to="/Roster" title="Roster" className="test">Roster</Link>
                 <Link to="/Submit" title="Submit" className="test">Submit </Link>
-                <Link to="/Search" title="Search" className="test">Search </Link>
             </section>
         </div>
         </>
