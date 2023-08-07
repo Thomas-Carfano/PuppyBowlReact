@@ -1,4 +1,3 @@
-import {useState} from 'react'
 
 const Submit = () => {
     console.log('Submit Page')
