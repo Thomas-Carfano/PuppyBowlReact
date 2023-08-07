@@ -83,7 +83,7 @@ return (
       </Grid>
     </Box>
 
-    <Search allFloofs={allFloofs}/>
+    <Search allFloofs={allFloofs} setAllFLoofs={setAllFloofs}/>
     </>
 )
 

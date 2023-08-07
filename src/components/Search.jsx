@@ -15,63 +15,44 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Search = ({allFloofs}) => {
+const Search = ({allFloofs, setAllFLoofs}) => {
     console.log('Search Test')
     const [storeUserInput, setStoreUserInput] = useState([]);
 
 const searchHandler = (e) => {
-    let arr = [];
     e.preventDefault();
-console.log(allFloofs)
-console.log(e.target[0].value)
+
 const userInput = e.target[0].value
 
 const compare = () => {
+    const filteredFloofs = [];
+
     for(let i = 0; i < userInput.length; i++) {
         storeUserInput.push(userInput[i])
         setStoreUserInput(storeUserInput)
     
     
-    for(let j = 0; j < allFloofs.length; j++){
-        console.log(allFloofs[j].name)
-        let loopNames = allFloofs[j].name
-        let floofs = allFloofs[j]
+        for(let j = 0; j < allFloofs.length; j++){
+        
+            let loopNames = allFloofs[j].name
+            let floof = allFloofs[j]
 
-        for(let k = 0; k < loopNames.length; k++){
-            console.log(loopNames[k])
+            for(let k = 0; k < loopNames.length; k++){
+            
 
-            if(userInput[i] === loopNames[k]){
-                console.log("yay")
-                console.log(loopNames)
-                arr.push(floofs)
-                continue;
+                if(userInput[i] === loopNames[k]){
+                
+                    // arr.push(floofs)
+                    console.log(floof)
+                    filteredFloofs.push(floof)
+        
+                    continue;
+                }
             }
         }
-    }}
+    }
 
-    console.log(arr)
-    getRoot.innerHTML = ""
-    return getRoot.innerHTML = (
-        `<h1>Test</h1>`
-    // <>
-    // <h1>Puppy Bowl Roster</h1>
-    // <Box sx={{ flexGrow: 1 }}>
-    //   <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-    //     {arr.map((index) => (
-    //       <Grid item xs={2} sm={4} md={4} key={index.length}>
-    //         <a href="#" >
-    //             <Item id={index.id}>
-    //                 <b>{index.name}</b>
-    //                 <br/>
-    //                 Status: {index.status}
-    //             </Item>
-    //         </a>
-    //       </Grid>
-    //     ))}
-    //   </Grid>
-    // </Box>
-    // </>
-    )
+    setAllFLoofs(filteredFloofs)
 }
 compare()
 
