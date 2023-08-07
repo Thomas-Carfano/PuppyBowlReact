@@ -1,0 +1,18 @@
+#Title-Nav{
+text-align: center;
+}
+#NavLinks{
+    background-color: blue;
+}
+
+.test{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#test2{
+    background-color: green;
+}
+#floofHighlight{
+    height: 250px;
+    width: 250px;
+}
